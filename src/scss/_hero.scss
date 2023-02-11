@@ -2,3 +2,20 @@
 @use "variables" as var;
 @use "colors" as color;
 
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    & > .image-container {
+        width: 80%;
+        display: flex;
+    }
+}
+
+#hero-image {
+    @include mix.image;
+}
+

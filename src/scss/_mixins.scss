@@ -19,3 +19,7 @@
 @mixin card {
     background-color: col.$beige;
 }
+
+@mixin image {
+    width: 100%;
+}
