@@ -17,9 +17,19 @@
 //cards
 
 @mixin card {
-    background-color: col.$beige;
+    background-color: color.$beige;
+    height: 60vh;
+    width: 80vw;
+    margin: 10%;
+    border-radius: 15px;
 }
 
 @mixin image {
     width: 100%;
+}
+
+@mixin divider {
+    background-color: aqua;
+    height: 5vh;
+    width: 80vw;
 }

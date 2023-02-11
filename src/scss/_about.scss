@@ -1,3 +1,38 @@
 @use "mixins" as mix;
 @use "variables" as var;
 @use "colors" as color;
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    
+
+    & .cards-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+        height: auto;
+        width: 100%;
+        
+
+        &__about {
+            @include mix.card;
+        }
+
+        &__divider {
+           @include mix.divider;
+        }
+
+        &__skills {
+            @include mix.card;
+        }
+    }
+}
+
+
+

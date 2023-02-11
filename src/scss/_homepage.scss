@@ -9,7 +9,13 @@
 @use "colors" as color;
 
 body {
-    background-color: color.$dark-grey;
+    
     display: flex;
     flex-direction: column;
+}
+
+.content-title {
+    background-color: aqua;
+    height: 10vh;
+    width: 100vw;
 }
