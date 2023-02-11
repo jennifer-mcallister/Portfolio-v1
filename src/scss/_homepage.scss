@@ -1,0 +1,13 @@
+@use "reset";
+@use "hero";
+@use "about";
+@use "projects";
+@use "contact";
+
+@use "mixins" as mix;
+@use "variables" as var;
+@use "colors" as color;
+
+body {
+    background-color: color.$dark-grey;
+}
