@@ -12,6 +12,14 @@
     & > .image-container {
         width: 80%;
         display: flex;
+        
+
+        @include mix.tablet {
+            width: 50%;
+        }
+        @include mix.desktop {
+            width: 50%;
+        }
     }
 }
 

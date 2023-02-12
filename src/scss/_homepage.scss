@@ -9,13 +9,17 @@
 @use "colors" as color;
 
 body {
-    
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .content-title {
     background-color: aqua;
     height: 10vh;
-    width: 100vw;
+
+    
+    @include mix.tablet {
+        width: 50%;
+    }
 }

@@ -7,7 +7,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
+    
+    @include mix.tablet {
+        height: 100vh;
+    }
     
 
     & .cards-container {
@@ -15,22 +18,43 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-       
         height: auto;
-        width: 100%;
+        width: 80%;
+        
+
+        @include mix.tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 50px;
+            padding: 100px;
+        }
         
 
         &__about {
             @include mix.card;
+
+            @include mix.tablet {
+                margin: 0;
+            }
         }
 
         &__divider {
            @include mix.divider;
+
+           @include mix.tablet {
+            display: none;
+           }
         }
 
         &__skills {
             @include mix.card;
+
+            @include mix.tablet {
+                margin: 0;
+            }
         }
+
+        
     }
 }
 
