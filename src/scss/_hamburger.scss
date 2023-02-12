@@ -1,0 +1,154 @@
+@use "colors" as color;
+@use "mixins" as mix;
+.menu-container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mix.tablet {
+        display: none;
+    }
+}
+
+.burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 30px; ///////////////// touch area size
+    &.showHitArea {
+      border: 1px solid olive;
+    }
+    & > div {
+    position: absolute;
+      width: 4em;
+      height: 0.5em;
+      border-radius: 1rem;
+      
+      &::before,
+      &::after {
+        transition: font-size 0s;
+        content: "";
+        display: block;
+        position: absolute;
+        width: 4em;
+        height: 0.5em;
+        background: color.$beige;
+        border-radius: 1rem;
+      }
+      &::before {
+        margin-top: -1.5em;
+      }
+      &::after {
+        margin-top: 1.5em;
+      }
+    }
+  }
+
+.burger2 {
+    width: 30px;
+    height: 30px;
+    & > div {
+      transition: background 0.4s, font-size 0s;
+      &::before,
+      &::after {
+        transition: font-size 0s;
+        transform-origin: center center;
+      }
+    }
+    &.toggled {
+      > div::before {
+        animation: burg2top 0.4s linear forwards;
+      }
+      > div {
+        background: transparent;
+      }
+      > div::after {
+        animation: burg2bottom 0.4s linear forwards;
+      }
+    }
+    &.unToggled {
+      > div::before {
+        animation: burg2topReset 0.4s linear forwards;
+      }
+      > div {
+        background: color.$beige;
+      }
+      > div::after {
+        animation: burg2bottomReset 0.4s linear forwards;
+      }
+    }
+  
+    @keyframes burg2top {
+      0% {
+      }
+      20% {
+        margin-top: 0em;
+        transform: rotate(0deg);
+      }
+      60% {
+        margin-top: 0em;
+        transform: rotate(55deg);
+      }
+      100% {
+        margin-top: 0em;
+        transform: rotate(45deg);
+      }
+    }
+  
+    @keyframes burg2bottom {
+      0% {
+      }
+      20% {
+        margin-top: 0em;
+        transform: rotate(0deg);
+      }
+      60% {
+        margin-top: 0em;
+        transform: rotate(-55deg);
+      }
+      100% {
+        margin-top: 0em;
+        transform: rotate(-45deg);
+      }
+    }
+  
+    @keyframes burg2topReset {
+      0% {
+        margin-top: 0em;
+        transform: rotate(45deg);
+      }
+      20% {
+        transform: rotate(0deg);
+      }
+      60% {
+        margin-top: 1.7em;
+        transform: rotate(0deg);
+      }
+      100% {
+        margin-top: 1.5em;
+        transform: rotate(0deg);
+      }
+    }
+  
+    @keyframes burg2bottomReset {
+      0% {
+        margin-top: 0em;
+        transform: rotate(-45deg);
+      }
+      20% {
+        transform: rotate(0deg);
+      }
+      60% {
+        margin-top: -1.7em;
+        transform: rotate(0deg);
+      }
+      100% {
+        margin-top: -1.5em;
+        transform: rotate(0deg);
+      }
+    }
+  }

@@ -3,6 +3,8 @@
 @use "about";
 @use "projects";
 @use "contact";
+@use "hamburger";
+@use "header";
 
 @use "mixins" as mix;
 @use "variables" as var;
@@ -12,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .content-title {
