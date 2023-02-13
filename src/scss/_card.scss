@@ -8,7 +8,7 @@
     height: 100%;
     border-radius: 15px;
 
-    @include mix.desktop {
+
         
 
         &--show {
@@ -23,7 +23,8 @@
             transform-style: preserve-3d;
             transition: all 0.5s ease; 
         }
-    }
+
+    
 }
 
 .cards-container__skills {
@@ -32,7 +33,7 @@
     height: 100%;
     border-radius: 15px;
 
-    @include mix.desktop {
+    
         
 
         &--show {
@@ -47,7 +48,7 @@
             transform-style: preserve-3d;
             transition: all 0.5s ease; 
         }
-    }
+    
 }
 
 .cards-container__project {
@@ -56,7 +57,6 @@
     height: 100%;
     border-radius: 15px;
 
-    @include mix.desktop {
         
 
         &--show {
@@ -71,14 +71,11 @@
             transform-style: preserve-3d;
             transition: all 0.5s ease; 
         }
-    }
 }
 
+
 .card-back {
-    display: none;
-    @include mix.desktop {
-        display: flex;
-    }
+    
     @include mix.card-backside;
 
     &__img-container {
@@ -93,12 +90,20 @@
             backface-visibility: hidden;
         }
     }
+    
 }
 
 .card-front {
-    @include mix.card-frontside;
 
-    @include mix.desktop {
-        transform: rotateY(180deg);
+    
+    & > p {
+        backface-visibility: hidden;
+        padding: 0;
+        margin: 0;
+        width: 80%;
     }
+
+    @include mix.card-frontside;
+    transform: rotateY(180deg);
+
 }

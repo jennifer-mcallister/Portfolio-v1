@@ -1,3 +1,4 @@
+import axios from "axios";
 
 // HAMBURGER MENU
 const menu = document.getElementById("hamburger-menu");
@@ -35,9 +36,15 @@ for (let i = 0; i < cardsProject.length; i++) {
         cardsProject[i].classList.toggle("cards-container__about--show");
     })
 }
-// for (let i = 0; i < cardsProject.length; i++) {
-//     cardsProject[i]?.addEventListener("click", ()=> {
-//         cardsProject[i].classList.toggle("cards-container__about--hide");
-//         cardProject.classList.toggle("cards-container__about--show");
-//     })
+
+// GITHUB REPO 
+
+export async function getRepositories() {
+  axios.get(`https://api.github.com/users/jennifer-mcallister/repos`).then((response) => {
+    response.data;
+    console.log(response.data);
+  });
+}
+
+// getRepositories();
 

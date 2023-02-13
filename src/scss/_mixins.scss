@@ -20,8 +20,8 @@
     background-color: color.$beige;
     height: 400px;
     width: 250px;
-    border-radius: 15px;
-    
+    border-radius: 15px;  
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 @mixin card-frontside {
@@ -31,6 +31,10 @@
     backface-visibility: hidden;
     background: color.$beige;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -41,6 +45,17 @@
     backface-visibility: hidden;
     background: color.$beige;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin card-zoomed {
+    background-color: color.$beige;
+    height: 420px;
+    width: 270px;
+    border-radius: 15px; 
 }
 
 @mixin image {
