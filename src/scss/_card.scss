@@ -9,11 +9,19 @@
     border-radius: 15px;
 
     @include mix.desktop {
-        transform-style: preserve-3d;
-        transition: all 0.5s ease; 
+        
 
-        &:hover {
+        &--show {
+            @include mix.card-holder;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease; 
             transform: rotateY(180deg);
+        }
+
+        &--hide {
+            @include mix.card-holder;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease; 
         }
     }
 }
@@ -25,11 +33,19 @@
     border-radius: 15px;
 
     @include mix.desktop {
-        transform-style: preserve-3d;
-        transition: all 0.5s ease; 
+        
 
-        &:hover {
+        &--show {
+            @include mix.card-holder;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease; 
             transform: rotateY(180deg);
+        }
+
+        &--hide {
+            @include mix.card-holder;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease; 
         }
     }
 }
@@ -41,11 +57,19 @@
     border-radius: 15px;
 
     @include mix.desktop {
-        transform-style: preserve-3d;
-        transition: all 0.5s ease; 
+        
 
-        &:hover {
+        &--show {
+            @include mix.card-holder;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease; 
             transform: rotateY(180deg);
+        }
+
+        &--hide {
+            @include mix.card-holder;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease; 
         }
     }
 }
@@ -58,7 +82,7 @@
     @include mix.card-backside;
 
     &__img-container {
-        width: 70%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
