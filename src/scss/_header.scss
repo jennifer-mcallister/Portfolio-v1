@@ -1,8 +1,43 @@
+@use "mixins" as mix;
+
 header {
     position: absolute;
     height: 100px;
-    width: 95vw;
+    width: 100vw;
     display: flex;
     align-items: flex-end;
-    flex-direction: column;
+    flex-direction: column; 
+
+    @include mix.tablet {
+        display: none;
+    }
 }
+
+.menu-options-container {
+
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+
+    &.show {
+        display: flex;
+    }
+
+    &.hide {
+        display: none;
+    }
+
+
+    & > .menu-options {
+
+        margin: 0;
+        padding: 0;
+
+        & > .option {
+
+        }
+    }
+
+}
+

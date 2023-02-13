@@ -9,3 +9,31 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+a {
+    text-decoration: none;
+
+    &:link {
+        text-decoration: none;
+        color: color.$beige;
+    }
+
+    &:visited {
+        text-decoration: none;
+        color: color.$beige;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: color.$beige;
+    }
+
+    &:active {
+        text-decoration: none;
+        color: color.$beige;
+    }
+}
+
+li {
+    list-style-type: none;
+}

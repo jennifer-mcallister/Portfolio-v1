@@ -16,11 +16,31 @@
 
 //cards
 
-@mixin card {
+@mixin card-holder {
     background-color: color.$beige;
     height: 400px;
     width: 250px;
     margin: 10%;
+    border-radius: 15px;
+    
+}
+
+@mixin card-frontside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: color.$beige;
+    border-radius: 15px;
+
+}
+
+@mixin card-backside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: color.$beige;
     border-radius: 15px;
 }
 
@@ -29,7 +49,13 @@
 }
 
 @mixin divider {
-    background-color: aqua;
     height: 5vh;
     width: 80vw;
+}
+
+@mixin title-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

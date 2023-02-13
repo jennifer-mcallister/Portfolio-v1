@@ -1,0 +1,80 @@
+@use "colors" as color;
+@use "mixins" as mix;
+
+
+.cards-container__about {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+
+    @include mix.desktop {
+        transform-style: preserve-3d;
+        transition: all 0.5s ease; 
+
+        &:hover {
+            transform: rotateY(180deg);
+        }
+    }
+}
+
+.cards-container__skills {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+
+    @include mix.desktop {
+        transform-style: preserve-3d;
+        transition: all 0.5s ease; 
+
+        &:hover {
+            transform: rotateY(180deg);
+        }
+    }
+}
+
+.cards-container__project {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+
+    @include mix.desktop {
+        transform-style: preserve-3d;
+        transition: all 0.5s ease; 
+
+        &:hover {
+            transform: rotateY(180deg);
+        }
+    }
+}
+
+.card-back {
+    display: none;
+    @include mix.desktop {
+        display: flex;
+    }
+    @include mix.card-backside;
+
+    &__img-container {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backface-visibility: hidden;
+
+        & > img {
+            @include mix.image;
+            backface-visibility: hidden;
+        }
+    }
+}
+
+.card-front {
+    @include mix.card-frontside;
+
+    @include mix.desktop {
+        transform: rotateY(180deg);
+    }
+}

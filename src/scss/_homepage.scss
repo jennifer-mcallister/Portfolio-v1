@@ -5,6 +5,7 @@
 @use "contact";
 @use "hamburger";
 @use "header";
+@use "card";
 
 @use "mixins" as mix;
 @use "variables" as var;
@@ -18,11 +19,33 @@ body {
 }
 
 .content-title {
-    background-color: aqua;
     height: 10vh;
+    width: 80%;
 
     
     @include mix.tablet {
         width: 50%;
     }
+}
+
+.cards-container__divider {
+    @include mix.divider;
+     & > img {
+        @include mix.image;
+     }
+}
+
+.content-title {
+    @include mix.title-frame;
+
+    & > img {
+        @include mix.image;
+        width: 50%;
+    }
+}
+
+h2 {
+    font-size: 4rem;
+    color: color.$beige;
+    margin: 0;
 }

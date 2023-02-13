@@ -28,7 +28,8 @@
         }
 
         &__project {
-            @include mix.card;
+            position: relative;
+            @include mix.card-holder;
 
             @include mix.tablet {
                 margin: 0;
