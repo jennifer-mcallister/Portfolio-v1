@@ -12,6 +12,7 @@
     & > .image-container {
         width: 80%;
         display: flex;
+        position: relative;
         
 
         @include mix.tablet {
@@ -25,5 +26,11 @@
 
 #hero-image {
     @include mix.image;
+    transform: rotate(90deg);
+
+    &__flipped {
+        @include mix.image;
+        transform: rotate(270deg);
+    }
 }
 
