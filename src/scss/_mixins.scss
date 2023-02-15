@@ -52,12 +52,6 @@
     align-items: center;
 }
 
-@mixin card-zoomed {
-    background-color: color.$beige;
-    height: 420px;
-    width: 270px;
-    border-radius: 15px; 
-}
 
 @mixin image {
     width: 100%;

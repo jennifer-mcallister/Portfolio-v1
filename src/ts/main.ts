@@ -71,10 +71,13 @@ async function renderRepositories () {
 
         // title card
         let cardTitle = document.createElement("h4");
-        cardBack.appendChild(cardTitle);
         let title = repos[i].name;
-        title = title.replace("-", " ");
-        cardBack.innerText = title;
+        title = title.replace(/-/g, " ");
+        title = title.replace(/_/g, " ");
+        cardTitle.innerText = title;
+        cardTitle.classList.add("project-title");
+        cardBack.appendChild(cardTitle);
+
 
         // img container back card
         let cardImageContainer = document.createElement("div");
