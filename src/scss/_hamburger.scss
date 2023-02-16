@@ -7,6 +7,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    z-index: 100;
 
     @include mix.tablet {
         display: none;
@@ -19,10 +21,9 @@
     align-items: center;
     font-size: 0.5rem;
     cursor: pointer;
-    padding: 30px; ///////////////// touch area size
-    &.showHitArea {
-      border: 1px solid olive;
-    }
+    padding: 30px;
+
+
     & > div {
     position: absolute;
       width: 4em;

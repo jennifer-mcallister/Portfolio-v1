@@ -91,26 +91,38 @@ async function renderRepositories () {
         cardBack.classList.add("card-back");
         card.appendChild(cardBack);
 
+        // back frame 
+        let cardFrame = document.createElement("div");
+        cardFrame.classList.add("card-back__frame");
+        cardBack.appendChild(cardFrame);
+
+        // img container back card
+        let cardImageContainer = document.createElement("div");
+        cardImageContainer.classList.add("card-back__img-container");
+        cardFrame.appendChild(cardImageContainer);
+
+        // img back  card
+        let cardImage = document.createElement("img");
+        cardImage.src = "/bumblebee.ff162559.png";
+        cardImage.alt = "moth";
+        if (i % 2 === 1) {
+            cardImage.classList.add("image-flipped");
+        }
+        cardImageContainer.appendChild(cardImage);
+
+        // back title container 
+        let cardTitleContainer = document.createElement("div");
+        cardTitleContainer.classList.add("card-back__text-container");
+        cardFrame.appendChild(cardTitleContainer);
+
         // title card
         let cardTitle = document.createElement("h4");
         let title = repos[i].name;
         title = title.replace(/-/g, " ");
         title = title.replace(/_/g, " ");
-        cardTitle.innerText = title;
+        cardTitle.innerText = `.  ${title}  .`;
         cardTitle.classList.add("project-title");
-        cardBack.appendChild(cardTitle);
-
-
-        // img container back card
-        let cardImageContainer = document.createElement("div");
-        cardImageContainer.classList.add("card-back__img-container");
-        cardBack.appendChild(cardImageContainer);
-
-        // img back  card
-        let cardImage = document.createElement("img");
-        cardImage.src = "/moth.73fd072c.png";
-        cardImage.alt = "moth";
-        cardImageContainer.appendChild(cardImage);
+        cardTitleContainer.appendChild(cardTitle);
 
         // card flipp event
         let cardEvent = document.getElementById(repos[i].name) as HTMLDivElement;
