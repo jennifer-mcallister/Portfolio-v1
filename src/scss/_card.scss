@@ -123,6 +123,22 @@
         width: 80%;
     }
 
+    & > a {
+        z-index: 100;
+        color: pink;
+        font-size: 0.8rem;
+
+        &:hover {
+            color: blue;
+        }
+
+   
+    }
+
+    & > h4 {
+        font-size: 0.8rem;
+    }
+
 
 }
 

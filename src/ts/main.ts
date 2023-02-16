@@ -64,6 +64,28 @@ async function renderRepositories () {
         cardFront.classList.add("card-front");
         card.appendChild(cardFront)
 
+        // front title
+        let frontTitle = document.createElement("h4");
+        let cardFrontTitle = repos[i].name;
+        cardFrontTitle = cardFrontTitle.replace(/-/g, " ");
+        cardFrontTitle = cardFrontTitle.replace(/_/g, " ");
+        frontTitle.innerText = cardFrontTitle;
+        frontTitle.classList.add("project-title");
+        cardFront.appendChild(frontTitle);
+
+        // front description
+        let frontDescription = document.createElement("p");
+        let frontDescriptionText =  repos[i].description;
+        frontDescription.innerText = frontDescriptionText;
+        cardFront.appendChild(frontDescription);
+        console.log(frontDescriptionText)
+
+        // front github link
+        let repo = document.createElement("a");
+        let repoText = `https://github.com/jennifer-mcallister/${repos[i].name}`;
+        repo.innerText = repoText;
+        cardFront.appendChild(repo);
+
         // back card
         let cardBack = document.createElement("div");
         cardBack.classList.add("card-back");

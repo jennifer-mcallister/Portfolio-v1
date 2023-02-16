@@ -26,7 +26,6 @@
 
 #hero-image {
     @include mix.image;
-    transform: rotate(90deg);
 
     &__flipped {
         @include mix.image;
