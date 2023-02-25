@@ -80,6 +80,7 @@ async function renderRepositories () {
         frontDescription.innerText = frontDescriptionText;
         cardTextContainer.appendChild(frontDescription);
 
+
         // front github link
         let repo = document.createElement("p");
         let repoText = `https://github.com/jennifer-mcallister/${repos[i].name}`;
@@ -108,12 +109,6 @@ async function renderRepositories () {
         frontTitle.innerText = cardFrontTitle;
         frontTitle.classList.add("project-title");
         cardFront.appendChild(frontTitle);
-
-        // front description
-        let frontDescription = document.createElement("p");
-        let frontDescriptionText =  repos[i].description;
-        frontDescription.innerText = frontDescriptionText;
-        frontTextContainer.appendChild(frontDescription);
 
 
         // back card
