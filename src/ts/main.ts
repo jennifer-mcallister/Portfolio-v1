@@ -74,6 +74,12 @@ async function renderRepositories () {
         cardTextContainer.classList.add("card-front__text-container");
         cardFrameFront.appendChild(cardTextContainer);
 
+        // front description
+        let frontDescription = document.createElement("p");
+        let frontDescriptionText =  repos[i].description;
+        frontDescription.innerText = frontDescriptionText;
+        cardTextContainer.appendChild(frontDescription);
+
         // front github link
         let repo = document.createElement("p");
         let repoText = `https://github.com/jennifer-mcallister/${repos[i].name}`;
@@ -99,17 +105,15 @@ async function renderRepositories () {
         let cardFrontTitle = repos[i].name;
         cardFrontTitle = cardFrontTitle.replace(/-/g, " ");
         cardFrontTitle = cardFrontTitle.replace(/_/g, " ");
-        frontTitle.innerText = `.  ${cardFrontTitle}  .`;
+        frontTitle.innerText = cardFrontTitle;
         frontTitle.classList.add("project-title");
-        cardTitleContainerFront.appendChild(frontTitle);
+        cardFront.appendChild(frontTitle);
 
         // front description
         let frontDescription = document.createElement("p");
         let frontDescriptionText =  repos[i].description;
         frontDescription.innerText = frontDescriptionText;
-        cardFront.appendChild(frontDescription);
-        console.log(frontDescriptionText)
-
+        frontTextContainer.appendChild(frontDescription);
 
 
         // back card
@@ -150,6 +154,14 @@ async function renderRepositories () {
         cardTitle.classList.add("project-title");
         cardTitleContainer.appendChild(cardTitle);
 
+        const quantity = 15;
+        for(let i = 0; i < quantity; i++) {
+            const star = document.createElement("div");
+            star.classList.add(`star`);
+            star.classList.add(`star__${i}`);
+            cardBack.appendChild(star);
+         }
+
         // card flipp event
         let cardEvent = document.getElementById(repos[i].name) as HTMLDivElement;
         cardEvent?.addEventListener("click", () => {
@@ -158,6 +170,20 @@ async function renderRepositories () {
         });
     }
 }
+
+// stars animation 
+
+
+const starContainer = document.getElementById("stars");
+const cardBackAddStars = (document.querySelector(".card-back") as HTMLElement)
+
+
+window.addEventListener('scroll', () => {
+    document.body.classList.add("--scroll");
+    
+    console.log(window.scrollY)
+    console.log("scrolling")
+});
 
 renderRepositories();
 
