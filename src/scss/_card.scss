@@ -7,12 +7,7 @@
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    @include mix.card-holder;
-
-
-
-
-        
+    @include mix.card-holder; 
 
         &--show {
             @include mix.card-holder;
@@ -26,8 +21,6 @@
             transform-style: preserve-3d;
             transition: all 0.5s ease; 
         }
-
-    
 }
 
 .cards-container__skills {
@@ -79,9 +72,13 @@
     
     @include mix.card-backside;
     transition: transform 0.8s;
+    background-image: url("../assets/pngwing.com.png");
+    background-size: cover;
+    position: relative;
 
     &__frame {
         @include mix.card-backside;
+        background-color: rgba(0, 0, 0, 0);
         scale: 0.95;
         border: 1px solid color.$dark-grey;
         display: flex;
@@ -126,30 +123,25 @@
 
         & > .project-title {
             font-size: 0.8rem;
+            text-transform: uppercase;
         }
         
     }
 
-
-
       
-      &:hover {
+      &:hover{
         transform: scale(1.1); 
         cursor: pointer;
-        border: 1px solid color.$red;
-        box-shadow: color.$red 0px 5px 15px;
       }
     
 }
 
 .card-front {
 
-    border: 1px solid color.$red;
-    box-shadow: color.$red 0px 5px 15px;
-
-
     @include mix.card-frontside;
     transform: rotateY(180deg);
+    background-image: url("../assets/paper.png");
+    background-size: cover;
     
     scale: 1.1; 
     cursor: pointer;
@@ -162,15 +154,33 @@
         flex-direction: column;
         justify-content: center;
         align-items: center; 
+        background-color: rgba(0, 0, 0, 0);
     }
       
 
+    &__img-container {
+        height: 85%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backface-visibility: hidden;
+        cursor: pointer;
+        
+
+        & > img {
+            @include mix.image;
+            backface-visibility: hidden;
+            border-radius: 15px;
+        }
+    }
 
 
     & > a {
         z-index: 100;
         color: pink;
         font-size: 0.8rem;
+        
 
         &:hover {
             color: color.$red;
@@ -194,12 +204,19 @@
             margin: 0;
             color: color.$dark-grey;
         }
+
+        & > .project-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
     }
 
     &__text-container {
         height: 85%;
         width: 100%;
+        gap: 30px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         backface-visibility: hidden;
@@ -207,6 +224,12 @@
 
         & > p {
             backface-visibility: hidden;
+            padding: 0;
+            margin: 0;
+            width: 80%;
+        }
+
+        & > a {
             padding: 0;
             margin: 0;
             width: 80%;

@@ -64,27 +64,41 @@ async function renderRepositories () {
         cardFront.classList.add("card-front");
         card.appendChild(cardFront)
 
-        // front title
-        let frontTitle = document.createElement("h4");
-        let cardFrontTitle = repos[i].name;
-        cardFrontTitle = cardFrontTitle.replace(/-/g, " ");
-        cardFrontTitle = cardFrontTitle.replace(/_/g, " ");
-        frontTitle.innerText = cardFrontTitle;
-        frontTitle.classList.add("project-title");
-        cardFront.appendChild(frontTitle);
+        // front frame
+        let cardFrontFrame = document.createElement("div");
+        cardFrontFrame.classList.add("card-front__frame");
+        cardFront.appendChild(cardFrontFrame);
+
+        // front text container 
+        let frontTextContainer = document.createElement("div");
+        frontTextContainer.classList.add("card-front__text-container");
+        cardFrontFrame.appendChild(frontTextContainer);
 
         // front description
         let frontDescription = document.createElement("p");
         let frontDescriptionText =  repos[i].description;
         frontDescription.innerText = frontDescriptionText;
-        cardFront.appendChild(frontDescription);
-        console.log(frontDescriptionText)
+        frontTextContainer.appendChild(frontDescription);
 
         // front github link
         let repo = document.createElement("a");
         let repoText = `https://github.com/jennifer-mcallister/${repos[i].name}`;
         repo.innerText = repoText;
-        cardFront.appendChild(repo);
+        frontTextContainer.appendChild(repo);
+
+        // front title container
+        let frontTitleContainer = document.createElement("div");
+        frontTitleContainer.classList.add("card-front__title-container");
+        cardFrontFrame.appendChild(frontTitleContainer);
+
+        // front title
+        let frontTitle = document.createElement("h4");
+        let cardFrontTitle = repos[i].name;
+        cardFrontTitle = cardFrontTitle.replace(/-/g, " ");
+        cardFrontTitle = cardFrontTitle.replace(/_/g, " ");
+        frontTitle.innerText = `.  ${cardFrontTitle}  .`;
+        frontTitle.classList.add("project-title");
+        frontTitleContainer.appendChild(frontTitle);
 
         // back card
         let cardBack = document.createElement("div");
@@ -124,6 +138,14 @@ async function renderRepositories () {
         cardTitle.classList.add("project-title");
         cardTitleContainer.appendChild(cardTitle);
 
+        const quantity = 15;
+        for(let i = 0; i < quantity; i++) {
+            const star = document.createElement("div");
+            star.classList.add(`star`);
+            star.classList.add(`star__${i}`);
+            cardBack.appendChild(star);
+         }
+
         // card flipp event
         let cardEvent = document.getElementById(repos[i].name) as HTMLDivElement;
         cardEvent?.addEventListener("click", () => {
@@ -132,6 +154,20 @@ async function renderRepositories () {
         });
     }
 }
+
+// stars animation 
+
+
+const starContainer = document.getElementById("stars");
+const cardBackAddStars = (document.querySelector(".card-back") as HTMLElement)
+
+
+window.addEventListener('scroll', () => {
+    document.body.classList.add("--scroll");
+    
+    console.log(window.scrollY)
+    console.log("scrolling")
+});
 
 renderRepositories();
 
