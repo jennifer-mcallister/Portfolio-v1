@@ -64,14 +64,44 @@ async function renderRepositories () {
         cardFront.classList.add("card-front");
         card.appendChild(cardFront)
 
+        // front frame
+        let cardFrameFront = document.createElement("div");
+        cardFrameFront.classList.add("card-front__frame");
+        cardFront.appendChild(cardFrameFront);
+
+        // front text container 
+        let cardTextContainer = document.createElement("div");
+        cardTextContainer.classList.add("card-front__text-container");
+        cardFrameFront.appendChild(cardTextContainer);
+
+        // front github link
+        let repo = document.createElement("p");
+        let repoText = `https://github.com/jennifer-mcallister/${repos[i].name}`;
+        repo.innerText = "Watch me on Github";
+        repo.classList.add("card-front__github-link");
+        cardTextContainer.appendChild(repo);
+
+        // event go to github project
+        repo.addEventListener("click", ()=> {
+            window.open(
+                repoText, "_blank"
+            );
+        })
+
+        // front title container 
+        let cardTitleContainerFront = document.createElement("div");
+        cardTitleContainerFront.classList.add("card-front__title-container");
+        cardTitleContainerFront.classList.add("project-title");
+        cardFrameFront.appendChild(cardTitleContainerFront);
+
         // front title
         let frontTitle = document.createElement("h4");
         let cardFrontTitle = repos[i].name;
         cardFrontTitle = cardFrontTitle.replace(/-/g, " ");
         cardFrontTitle = cardFrontTitle.replace(/_/g, " ");
-        frontTitle.innerText = cardFrontTitle;
+        frontTitle.innerText = `.  ${cardFrontTitle}  .`;
         frontTitle.classList.add("project-title");
-        cardFront.appendChild(frontTitle);
+        cardTitleContainerFront.appendChild(frontTitle);
 
         // front description
         let frontDescription = document.createElement("p");
@@ -80,11 +110,7 @@ async function renderRepositories () {
         cardFront.appendChild(frontDescription);
         console.log(frontDescriptionText)
 
-        // front github link
-        let repo = document.createElement("a");
-        let repoText = `https://github.com/jennifer-mcallister/${repos[i].name}`;
-        repo.innerText = repoText;
-        cardFront.appendChild(repo);
+
 
         // back card
         let cardBack = document.createElement("div");

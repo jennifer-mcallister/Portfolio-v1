@@ -194,6 +194,10 @@
             margin: 0;
             color: color.$dark-grey;
         }
+
+        & > .project-title {
+            font-size: 0.8rem;
+        }
     }
 
     &__text-container {
@@ -213,5 +217,14 @@
         }
 
     }
+
+    &__github-link {
+        &:hover {
+            color: color.$red;
+        }
+    }
+
+    
+
 
 }
