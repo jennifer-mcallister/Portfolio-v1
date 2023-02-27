@@ -9,34 +9,45 @@
     align-items: center;
     height: 100vh;
 
-    & > .image-container {
-        width: 80%;
-        display: flex;
-        position: relative;
-        
-
-        @include mix.tablet {
-            width: 50%;
-        }
-        @include mix.desktop {
-            width: 50%;
-        }
-    }
-
     & > h2 {
-        font-size: 3rem;
+        font-size: 1rem;
         color: color.$beige;
         margin: 0;
-        font-family: 'Babylonica';
+
+        @include mix.desktop {
+            font-size: 3rem;
+        }
+    }
+
+
+}
+
+.hero__title-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+
+
+
+        & > img {
+            position: absolute;
+            bottom: -300%;
+        }
+
+        @include mix.desktop {
+            width: 100%;
+        }
+    
+
+
+        & > .title-occupation {
+            font-size: 1.2rem;
+
     }
 }
 
-#hero-image {
-    @include mix.image;
 
-    &__flipped {
-        @include mix.image;
-        transform: rotate(270deg);
-    }
-}
 

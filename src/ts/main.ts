@@ -64,15 +64,11 @@ async function renderRepositories () {
         cardFront.classList.add("card-front");
         card.appendChild(cardFront)
 
-        // front frame
-        let cardFrameFront = document.createElement("div");
-        cardFrameFront.classList.add("card-front__frame");
-        cardFront.appendChild(cardFrameFront);
 
         // front text container 
         let cardTextContainer = document.createElement("div");
         cardTextContainer.classList.add("card-front__text-container");
-        cardFrameFront.appendChild(cardTextContainer);
+        cardFront.appendChild(cardTextContainer);
 
         // front description
         let frontDescription = document.createElement("p");
@@ -84,7 +80,7 @@ async function renderRepositories () {
         // front github link
         let repo = document.createElement("p");
         let repoText = `https://github.com/jennifer-mcallister/${repos[i].name}`;
-        repo.innerText = "Watch me on Github";
+        repo.innerText = "Watch project on Github";
         repo.classList.add("card-front__github-link");
         cardTextContainer.appendChild(repo);
 
@@ -99,7 +95,7 @@ async function renderRepositories () {
         let cardTitleContainerFront = document.createElement("div");
         cardTitleContainerFront.classList.add("card-front__title-container");
         cardTitleContainerFront.classList.add("project-title");
-        cardFrameFront.appendChild(cardTitleContainerFront);
+        cardFront.appendChild(cardTitleContainerFront);
 
         // front title
         let frontTitle = document.createElement("h4");
@@ -108,7 +104,7 @@ async function renderRepositories () {
         cardFrontTitle = cardFrontTitle.replace(/_/g, " ");
         frontTitle.innerText = cardFrontTitle;
         frontTitle.classList.add("project-title");
-        cardFront.appendChild(frontTitle);
+        cardTitleContainerFront.appendChild(frontTitle);
 
 
         // back card
@@ -116,38 +112,15 @@ async function renderRepositories () {
         cardBack.classList.add("card-back");
         card.appendChild(cardBack);
 
-        // back frame 
-        let cardFrame = document.createElement("div");
-        cardFrame.classList.add("card-back__frame");
-        cardBack.appendChild(cardFrame);
-
-        // img container back card
-        let cardImageContainer = document.createElement("div");
-        cardImageContainer.classList.add("card-back__img-container");
-        cardFrame.appendChild(cardImageContainer);
-
-        // img back  card
-        let cardImage = document.createElement("img");
-        cardImage.src = "/bumblebee.ff162559.png";
-        cardImage.alt = "moth";
-        if (i % 2 === 1) {
-            cardImage.classList.add("image-flipped");
-        }
-        cardImageContainer.appendChild(cardImage);
-
-        // back title container 
-        let cardTitleContainer = document.createElement("div");
-        cardTitleContainer.classList.add("card-back__text-container");
-        cardFrame.appendChild(cardTitleContainer);
 
         // title card
         let cardTitle = document.createElement("h4");
         let title = repos[i].name;
         title = title.replace(/-/g, " ");
         title = title.replace(/_/g, " ");
-        cardTitle.innerText = `.  ${title}  .`;
+        cardTitle.innerText = `${title}`;
         cardTitle.classList.add("project-title");
-        cardTitleContainer.appendChild(cardTitle);
+        cardBack.appendChild(cardTitle);
 
         const quantity = 15;
         for(let i = 0; i < quantity; i++) {

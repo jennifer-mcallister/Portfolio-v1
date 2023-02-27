@@ -47,10 +47,16 @@ body {
 }
 
 h1 {
-    font-size: 5rem;
-    color: rgb(112, 2, 2);
+    font-size: 2rem;
+    color: color.$beige;
     margin: 0;
-    font-family: 'Babylonica';
+    font-family: 'Milonga', cursive;
+    text-transform: uppercase;
+
+    @include mix.desktop {
+        font-size: 5rem;
+    }
+
 }
 
 h2 {

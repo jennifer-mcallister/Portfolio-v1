@@ -9,6 +9,7 @@
     align-items: center;
     position: fixed;
     z-index: 100;
+    margin: 15px;
 
     @include mix.tablet {
         display: none;
@@ -19,15 +20,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     cursor: pointer;
-    padding: 30px;
+    padding: 0px;
+
 
 
     & > div {
     position: absolute;
-      width: 4em;
-      height: 0.5em;
+      width: 5em;
+      height: 0.6em;
       border-radius: 1rem;
       
       &::before,
@@ -36,8 +38,8 @@
         content: "";
         display: block;
         position: absolute;
-        width: 4em;
-        height: 0.5em;
+        width: 5em;
+        height: 0.6em;
         background: color.$beige;
         border-radius: 1rem;
       }
@@ -48,6 +50,10 @@
         margin-top: 1.5em;
       }
     }
+  }
+
+  .ham-sticks {
+    margin: 5px;;
   }
 
 .burger2 {

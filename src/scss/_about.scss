@@ -7,12 +7,78 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
     
     @include mix.tablet {
         height: 100vh;
     }
     
+    .about {
+    
+        &__container {
+        position: relative;
+        background-image: url("../assets/frame-mobile.png");
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 70vh;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+            @include mix.tablet {
+                background-image: url("../assets/frame.png");
+                width: 100%;
+                gap: 10px;
+            }
+
+            @include mix.desktop {
+                width: 80%;
+            }
+
+        & > h2 {
+            font-size: 2rem;
+
+            @include mix.tablet {
+                font-size: 3rem;
+            }
+
+            @include mix.desktop {
+                font-size: 4rem;
+            }
+        }
+       
+        }
+
+
+        &__text-container {
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+            color: color.$beige;
+            font-size: 1rem;
+            flex-direction: column;
+
+
+            @include mix.tablet {
+                font-size: 1.4rem;
+                height: 45%;
+            }
+
+            @include mix.desktop {
+                height: 60%;
+            }
+
+            & > a {
+                font-size: 1.5rem;
+            }
+
+        }  
+    }
 
     & .cards-container {
         display: flex;
