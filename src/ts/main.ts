@@ -16,7 +16,6 @@ menu?.addEventListener("click", ()=> {
 })
 
 // CARD ANIMATION
-
 const cardAbout = document.getElementById("card-about");
 cardAbout?.addEventListener("click", ()=> {
     cardAbout.classList.toggle("cards-container__about--hide");
@@ -29,10 +28,7 @@ cardSkill?.addEventListener("click", ()=> {
     cardSkill.classList.toggle("cards-container__skills--show");
 })
 
-
-
 // GITHUB REPO 
-
 let repos: IRepositories[] = [];
 const getData = async () => {
     return axios
@@ -42,13 +38,10 @@ const getData = async () => {
       })
   }
 
-
-
+// RENDER PROJECTS
 async function renderRepositories () {
     const container = (document.getElementById("cards-projects") as HTMLDivElement);
     repos = await getData();
-    console.log(repos);
-
    
     for(let i = 0; i < repos.length; i++) {
 
@@ -84,7 +77,7 @@ async function renderRepositories () {
         repo.classList.add("card-front__github-link");
         cardTextContainer.appendChild(repo);
 
-        // event go to github project
+        // event github project
         repo.addEventListener("click", ()=> {
             window.open(
                 repoText, "_blank"
@@ -106,12 +99,10 @@ async function renderRepositories () {
         frontTitle.classList.add("project-title");
         cardTitleContainerFront.appendChild(frontTitle);
 
-
         // back card
         let cardBack = document.createElement("div");
         cardBack.classList.add("card-back");
         card.appendChild(cardBack);
-
 
         // title card
         let cardTitle = document.createElement("h4");
@@ -122,6 +113,7 @@ async function renderRepositories () {
         cardTitle.classList.add("project-title");
         cardBack.appendChild(cardTitle);
 
+        // stars
         const quantity = 15;
         for(let i = 0; i < quantity; i++) {
             const star = document.createElement("div");
@@ -139,19 +131,13 @@ async function renderRepositories () {
     }
 }
 
-// stars animation 
 
-
-const starContainer = document.getElementById("stars");
-const cardBackAddStars = (document.querySelector(".card-back") as HTMLElement)
-
-
-window.addEventListener('scroll', () => {
-    document.body.classList.add("--scroll");
+// window.addEventListener('scroll', () => {
+//     document.body.classList.add("--scroll");
     
-    console.log(window.scrollY)
-    console.log("scrolling")
-});
+//     console.log(window.scrollY)
+//     console.log("scrolling")
+// });
 
 renderRepositories();
 
