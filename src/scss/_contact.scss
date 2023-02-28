@@ -5,19 +5,22 @@
 #contact {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    height: 22vh;
+    height: 40vh;
     width: 100%;
     background-color: rgb(0, 0, 0);
     z-index: 200;
     color: color.$beige;
     font-size: 1.2rem;
+    gap: 30px;
 
     & > .copyright {
         font-size: 0.9rem;
         height: 15%;
         color: color.$secondary-beige;
+        height: auto;
+        margin: 0;
     }
 }
 
@@ -26,10 +29,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
-    height: 65%;
     @include mix.tablet {
         flex-direction: row;
+        
     }
 
     & > p {
@@ -38,6 +42,16 @@
 
     & > b {
         color: color.$blue;
+    }
+
+    & > a {
+        cursor: pointer;
+        color: color.$blue;
+        font-size: 0.8rem;
+    }
+    & > a:hover {
+        transform: scale(1.03);
+        cursor: pointer;
     }
 }
 

@@ -7,7 +7,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 60vh;
+
+    @include mix.tablet {
+        height: 80vh;
+    }
 
     & > h2 {
         font-size: 1rem;
@@ -34,7 +38,8 @@
 
         & > img {
             position: absolute;
-            bottom: -300%;
+            bottom: -180%;
+            width: 100%;
         }
 
         @include mix.desktop {
@@ -44,7 +49,13 @@
 
 
         & > .title-occupation {
-            font-size: 1.2rem;
+            color: rgb(240, 215, 131);
+            font-size: 1rem;
+            font-family: 'Philosopher', sans-serif;
+
+            @include mix.desktop {
+                font-size: 2rem;
+            }
 
     }
 }

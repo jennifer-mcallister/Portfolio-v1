@@ -1,4 +1,5 @@
 @use "colors" as color;
+@use "mixins" as mix;
 
 body {
     margin: 0;
@@ -41,7 +42,12 @@ a {
 
     &:active {
         text-decoration: none;
-        color: color.$beige;
+        color: color.$blue;
+        
+
+        @include mix.desktop {
+            color: color.$beige;
+        }
     }
 }
 
