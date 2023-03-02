@@ -73,7 +73,7 @@ async function renderRepositories () {
         // front github link
         let repo = document.createElement("p");
         let repoText = `https://github.com/jennifer-mcallister/${repos[i].name}`;
-        repo.innerText = "Watch project on Github";
+        repo.innerText = "Watch on Github";
         repo.classList.add("card-front__github-link");
         cardTextContainer.appendChild(repo);
 

@@ -38,6 +38,7 @@ a {
         text-decoration: none;
         color: color.$blue;
         transform: scale(1.1); 
+        transition: all .7s;
     }
 
     &:active {
