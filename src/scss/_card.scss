@@ -42,7 +42,15 @@
             transition: all 0.5s ease; 
         }
 }
-
+/** Mozilla Firefox */
+@-moz-document url-prefix() {
+    .cards-container__project--show {
+        backface-visibility: hidden;
+    }
+    .cards-container__project--hide {
+        backface-visibility: hidden;
+    }
+}
 .cards-container__project {
     position: absolute;
     width: 100%;

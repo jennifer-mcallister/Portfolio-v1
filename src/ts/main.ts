@@ -136,8 +136,19 @@ async function renderRepositories () {
         });
     }
 }
+function agentHas(keyword: String) {
+    return navigator.userAgent.toLowerCase().search(keyword.toLowerCase()) > -1;
+    }
 
+function isFirefox() {
+    return agentHas("Firefox") || agentHas("FxiOS") || agentHas("Focus");
+    }
 
+function whichBrowser() {
+    if (isFirefox()) {
+    return "Firefox";
+    }
+}
 // window.addEventListener('scroll', () => {
 //     document.body.classList.add("--scroll");
     
@@ -146,4 +157,5 @@ async function renderRepositories () {
 // });
 
 renderRepositories();
+whichBrowser();
 
