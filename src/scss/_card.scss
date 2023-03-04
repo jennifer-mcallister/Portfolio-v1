@@ -175,7 +175,7 @@
 
         & > p {
             backface-visibility: hidden;
-            padding: 0;
+            padding: 10px;
             margin: 0;
             width: 80%;
             color: color.$beige;
@@ -189,7 +189,7 @@
         & > a {
             padding: 0;
             margin: 0;
-            width: 80%;
+            text-decoration: underline;
         }
 
     }
@@ -199,8 +199,6 @@
         backface-visibility: hidden;
         padding: 0;
         margin: 0;
-        width: 80%;
-        height: 20%;
         transition: 0.7s;
 
             &:hover {

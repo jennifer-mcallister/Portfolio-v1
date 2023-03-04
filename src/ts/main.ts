@@ -68,21 +68,27 @@ async function renderRepositories () {
         let frontDescriptionText =  repos[i].description;
         frontDescription.innerText = frontDescriptionText;
         cardTextContainer.appendChild(frontDescription);
+        if (!frontDescriptionText) {
+            frontDescription.innerText = "No description provided yet."
+        }
 
 
         // front github link
-        let repo = document.createElement("p");
+        let repo = document.createElement("a");
         let repoText = `https://github.com/jennifer-mcallister/${repos[i].name}`;
+        repo.setAttribute("href", repoText);
+        repo.setAttribute("target", "_blank")
         repo.innerText = "Watch on Github";
         repo.classList.add("card-front__github-link");
         cardTextContainer.appendChild(repo);
+        console.log(repoText);
 
-        // event github project
-        repo.addEventListener("click", ()=> {
-            window.open(
-                repoText, "_blank"
-            );
-        })
+        // // event github project
+        // repo.addEventListener("click", ()=> {
+        //     window.open(
+        //         repoText, "_blank"
+        //     );
+        // })
 
         // front title container 
         let cardTitleContainerFront = document.createElement("div");
