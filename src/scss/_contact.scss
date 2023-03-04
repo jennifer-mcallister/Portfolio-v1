@@ -4,7 +4,7 @@
 
 .content-container__contact {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     width: 100%;
@@ -14,6 +14,10 @@
     font-size: 1rem;
     gap: 30px;
     height: 25vh;
+
+    @include mix.tablet {
+        flex-direction: row;
+    }
 }
 
 .contact-info__container {
@@ -25,9 +29,8 @@
 
 .footer__text-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    // flex-wrap: wrap;
     gap: 10px;
     @include mix.tablet {
         flex-direction: row;
@@ -49,7 +52,7 @@
         
     }
     & > a:hover {
-        transform: scale(1.1);
+        transform: scale(1.2);
         cursor: pointer;
         
     }
@@ -63,24 +66,35 @@
     &__menu-options {
         margin: 0;
         display: flex; 
-        flex-direction: column;
+        flex-direction: row;
         gap: 20px;
         justify-content: space-around;
         padding: 0;
         font-size: 1.2rem;
+        -webkit-tap-highlight-color: transparent;
+        &:focus { outline: none !important;}
+
 
         @include mix.tablet {
             justify-content: center;
-            gap: 40px;
+            flex-direction: column;
+            gap: 10px;
         }
     }
 
 }
 
 .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0.9rem;
     height: 15%;
     color: color.$secondary-beige;
     height: auto;
     margin: 0;
+    width: auto;
+    @include mix.tablet {
+        display: block;
+    }
 }

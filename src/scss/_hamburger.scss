@@ -23,6 +23,8 @@
     font-size: 0.7rem;
     cursor: pointer;
     padding: 0px;
+    -webkit-tap-highlight-color: transparent;
+    &:focus { outline: none !important;}
 
 
 

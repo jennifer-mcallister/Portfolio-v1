@@ -48,6 +48,8 @@ header {
 
         & > .option {
             font-size: 2rem;
+            -webkit-tap-highlight-color: transparent;
+            &:focus { outline: none !important;}
         }
     }
 

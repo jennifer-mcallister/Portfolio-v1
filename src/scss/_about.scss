@@ -27,8 +27,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 30px;
-
+        
             @include mix.tablet {
                 background-image: url("../assets/frame.png");
                 width: 100%;
@@ -55,7 +54,6 @@
 
 
         &__text-container {
-            height: 60%;
             display: flex;
             justify-content: center;
             align-items: center;
