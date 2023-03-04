@@ -50,7 +50,7 @@ h1 {
     font-size: 2rem;
     color: rgb(240, 215, 131);
     margin: 0;
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'Josefin Slab', 'Times New Roman', Times, serif;
 
     @include mix.desktop {
         font-size: 5rem;
@@ -59,9 +59,9 @@ h1 {
 }
 
 h2 {
+    font-family: 'Josefin Slab', 'Times New Roman', Times, serif;
     font-size: 4rem;
     color: color.$beige;
     margin: 0;
-    font-family: 'Philosopher', sans-serif;
 }
 
